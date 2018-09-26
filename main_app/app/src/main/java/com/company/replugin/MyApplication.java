@@ -9,12 +9,12 @@ import com.qihoo360.replugin.RePlugin;
 import com.qihoo360.replugin.RePluginConfig;
 
 /**
- * @author EDZ
+ * @author Tinlone
  * @date 2018/3/23.
  * I cannot choose the best. The best chooses me.
  */
-public class MyApplication extends MultiDexApplication {
 
+public class MyApplication extends MultiDexApplication {
     private static MyApplication mContext ;
 
     @Override

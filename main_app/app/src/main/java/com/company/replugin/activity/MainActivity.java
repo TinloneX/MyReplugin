@@ -54,19 +54,16 @@ public class MainActivity extends BaseActivity {
     }
 
     private void loadingPlugin() {
-        tvInfo.append("\n点击了背景板");
+        tvInfo.append("\n点击了信息面板");
         TLog.i("请求权限");
-
+        // 检查是否安装第1个插件,否则安装并
         if (!PluginUtils.isPluginInstalled(0)) {
             tvInfo.append("\n开始安装插件");
             install();
         } else {
             tvInfo.append("\n插件已安装");
-            RePlugin.startActivity(mContext, RePlugin.createIntent(CollectionConfig.PLUGINS_NAME.get(0),
-                    "com.company.plg1.plugin.PluginMainActivity"));
-            tvInfo.append("\n启动 replugin_plns ");
+            gotoPluginMainActivity();
         }
-
     }
 
     private void install(){
@@ -76,8 +73,7 @@ public class MainActivity extends BaseActivity {
                     public void onGranted() {
                         if (PluginUtils.installPluginByIndex(0)) {
                             tvInfo.append("\n插件安装成功");
-                            RePlugin.startActivity(mContext, RePlugin.createIntent(CollectionConfig.PLUGINS_NAME.get(0),
-                                    "com.company.plg1.plugin.PluginMainActivity"));
+                            gotoPluginMainActivity();
                         }
                     }
 
@@ -88,6 +84,11 @@ public class MainActivity extends BaseActivity {
                 }).request();
     }
 
+    private void gotoPluginMainActivity() {
+        RePlugin.startActivity(mContext, RePlugin.createIntent(CollectionConfig.PLUGINS_NAME.get(0),
+                "com.company.plg1.plugin.PluginMainActivity"));
+        tvInfo.append("\n启动 replugin_plns ");
+    }
     @Override
     protected void initData() {
 //        showLoading();

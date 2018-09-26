@@ -1,7 +1,5 @@
 package com.company.replugin.util;
 
-import com.blankj.utilcode.constant.PermissionConstants;
-import com.blankj.utilcode.util.PermissionUtils;
 import com.company.replugin.config.CollectionConfig;
 import com.qihoo360.replugin.RePlugin;
 import com.qihoo360.replugin.model.PluginInfo;
@@ -12,7 +10,7 @@ public class PluginUtils {
     /**
      * 检查插件是否已安装
      *
-     * @param pluginName pluginName
+     * @param pluginName 插件AndroidManifest.xml中 meta-data 的 name
      * @return isPluginInstalled
      */
     public static boolean isPluginInstalled(String pluginName) {
@@ -26,6 +24,7 @@ public class PluginUtils {
      * @return isPluginInstalled
      */
     public static boolean isPluginInstalled(int pluginIndex) {
+        // CollectionConfig.PLUGINS_NAME 用于存放 插件AndroidManifest.xml中 meta-data 的 name集合
         return RePlugin.isPluginInstalled(CollectionConfig.PLUGINS_NAME.get(pluginIndex));
     }
 
@@ -36,6 +35,7 @@ public class PluginUtils {
      * @return 是否安装成功
      */
     public static boolean installPluginByIndex(int pluginIndex) {
+        // CollectionConfig.PLUGINS_PATH 用于存放 插件的 存放路径集合
         return installPluginByName(
                 CollectionConfig.PLUGINS_NAME.get(pluginIndex),
                 CollectionConfig.PLUGINS_PATH.get(pluginIndex));
@@ -99,6 +99,4 @@ public class PluginUtils {
         TLog.i("tag", "卸载" + pluginName);
         return RePlugin.uninstall(pluginName);
     }
-
-
 }
