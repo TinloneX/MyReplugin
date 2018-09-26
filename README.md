@@ -1,5 +1,5 @@
 ## 写在前面
-最近公司想做AB面的APP，考虑想用插件化方案实现动态接入功能，多(bai)方(du)考(yi)虑(xia)发现[360的RePlugin](https://github.com/Qihoo360/RePlugin)比(hen)较(jian)火(dan)，故尝试一下Replugin[手动smile]
+最近公司想做AB面的APP，考虑想用插件化方案实现动态接入功能，多(bai)方(du)考(yi)虑(xia)发现[360的RePlugin](https://github.com/Qihoo360/RePlugin)比(hen)较(jian)火(dan)，故尝试一下Replugin[手动smile],虽然最终不适合AB面的最初设想，但是对正经项目还是挺合适的，过程曲折离奇，聊做记录！
 ## 主程序配置：
 由于本人**比(fei)较(chang)莽**，如果参考本文失败，请参见官方文档：[Replugin-wiki](https://github.com/Qihoo360/RePlugin/wiki)
 ##### gradle相关配置
