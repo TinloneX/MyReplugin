@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ff6d2a</color>
+    <color name="colorPrimaryDark">#ff6d2a</color>
+    <color name="colorAccent">#ff6d2a</color>
+    
+    <color name="dark_gray_6000">#66000000</color>
+    <color name="color_dfdfdf">#dfdfdf</color>
+
+    <!--深颜色文本黑色-->
+    <color name="hx_text_dark_black">#FF212121</color>
+    <!--金黄色-->
+    <color name="hx_golden_yellow">#FFD2B152</color>
+
+</resources>
