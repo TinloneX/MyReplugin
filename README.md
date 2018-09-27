@@ -183,7 +183,8 @@ apply plugin: 'replugin-plugin-gradle'
 // 初始化控件省略，详见demo
 // tvInfo用以展示流程信息及点击触发安装插件/跳转插件界面
 tvInfo.setOnClickListener(v -> loadingPlugin());
-// 卸载插件的触发按钮，PluginUtils为个人封装的插件相关工具类
+// 卸载插件的触发按钮，PluginUtils为个人封(xia)装(xie)的插件相关工具类
+// PluginUtils.unInstallPluginByIndex(0) 实际调用Replugin.unInstall(pluginName)
 findViewById(R.id.btn_uninstall).setOnClickListener(v -> tvInfo.append(
                 PluginUtils.isPluginInstalled(0) && PluginUtils.unInstallPluginByIndex(0)
                         ?
@@ -199,7 +200,7 @@ loadPlugin()方法内容：
     private void loadingPlugin() {
         tvInfo.append("\n点击了信息面板");
         TLog.i("请求权限");
-        // 检查是否安装第1个插件,否则安装插件
+        // 检查是否安装第1个插件,否则安装插件,实际调用Replugin.isPluginInstalled(pluginName)
         if (!PluginUtils.isPluginInstalled(0)) {
             tvInfo.append("\n开始安装插件");
             install();
@@ -212,12 +213,12 @@ loadPlugin()方法内容：
      * 安装插件1
      **/
     private void install(){
-       // 重要：动态获取文件权限，否则不成功
+       // 重要：动态判断/获取文件权限，没有权限则安装不成功
         PermissionUtils.permission(PermissionConstants.STORAGE)
                 .callback(new PermissionUtils.SimpleCallback() {
                     @Override
                     public void onGranted() {
-                        // 调用安装程序，若安装成功，则跳转页面
+                        // 调用安装程序，若安装成功，则跳转页面 实际调用Replugin.install(pluginName)
                         if (PluginUtils.installPluginByIndex(0)) {
                             tvInfo.append("\n插件安装成功");
                             gotoPluginMainActivity();
