@@ -2,7 +2,7 @@ package com.company.replugin;
 
 import android.content.Context;
 import android.content.res.Configuration;
-import android.support.multidex.MultiDexApplication;
+import androidx.multidex.MultiDexApplication;
 
 import com.company.replugin.manager.AppLifecycleManager;
 import com.qihoo360.replugin.RePlugin;

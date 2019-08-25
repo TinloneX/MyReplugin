@@ -1,6 +1,6 @@
 package com.company.replugin.activity;
 
-import android.support.v4.view.ViewPager;
+import androidx.viewpager.widget.ViewPager;
 
 import com.company.replugin.R;
 import com.company.replugin.base.BaseActivity;
