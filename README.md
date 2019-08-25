@@ -6,12 +6,14 @@
 懒人直接PO代码，[案例详见GitHub](https://github.com/TinloneX/MyReplugin)！
 - 根目录*build.gradle* 中代码：
 
+~~// 由于replugin:2.3.0尚未兼容gradle:3.2.0,故建议不使用高版本gradle~~
+
+~~// 使用3.2.0版本gradle编译无法通过，3.1.4版本正常~~
 ```
 dependencies {
-        // 由于replugin:2.3.0尚未兼容gradle:3.2.0,故建议不使用高版本gradle
-        // 使用3.2.0版本gradle编译无法通过，3.1.4版本正常
-        classpath 'com.android.tools.build:gradle:3.1.4'
-        classpath 'com.qihoo360.replugin:replugin-host-gradle:2.3.0'
+        
+        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath 'com.qihoo360.replugin:replugin-host-gradle:2.3.3'
     }
 ```
 以下是app目录下*build.gradle* 相关代码：
@@ -143,10 +145,12 @@ android:name=".MyApplication"
 ##### gradle 配置
 - 根目录下*build.gradle* 代码：
 
+~~// (仅)建议gradle版本与主程序一致，显然还是要低于3.2.0版本(高于3.2.0未尝试)~~
+
 ```
 dependencies {
-        // (仅)建议gradle版本与主程序一致，显然还是要低于3.2.0版本(高于3.2.0未尝试)
-        classpath 'com.android.tools.build:gradle:3.1.4'
+        // no suport for 3.5.0
+        classpath 'com.android.tools.build:gradle:3.2.0'
         classpath 'com.qihoo360.replugin:replugin-plugin-gradle:2.2.4'
     }
 ```
