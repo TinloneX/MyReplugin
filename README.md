@@ -147,6 +147,7 @@ android:name=".MyApplication"
 
 ~~// (仅)建议gradle版本与主程序一致，显然还是要低于3.2.0版本(高于3.2.0未尝试)~~
 
+
 ```
 dependencies {
         // no suport for 3.5.0
@@ -359,3 +360,9 @@ public class PluginUtils {
 - 卸载不一定是及时行为，如果你正在使用插件，那么卸载插件仅先记载卸载行为，当(冷启动)重启时执行卸载操作
 - 案例中代码没有生产环境代码一般严谨，PlugName 及 PluginPath请按个人想法处理, 案例中签名文件已放在项目中，如要使用release编译需要自行更改密钥路径。
 - 此案例仅介绍外置插件的安装和卸载，内置插件看官方文档吧~~
+
+**问题集锦：**
+
+**1.插件使用androidx时报错：Program type already present: androidx.versionedparcelable.VersionedParcelStream$InputBuffer ；则删除build目录重新编译；**
+
+**2.插件使用gradle3.5.0是sync报错：No such property: androidBuilder for class: com.android.build.gradle.internal.scope.GlobalScope； 那就不用这个版本，用3.2.+，哈哈哈哈**
